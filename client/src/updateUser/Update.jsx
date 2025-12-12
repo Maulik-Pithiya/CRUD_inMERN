@@ -19,7 +19,7 @@ const Update = () => {
   const {id} = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/user/${id}`)
+        axios.get(`https://crud-nn05.onrender.com/api/user/${id}`)
             .then((response) => {
                  reset(response.data);
             })
@@ -31,7 +31,7 @@ const Update = () => {
 
   const submitForm = async (data) => {
     // console.log(data)  
-    await axios.put(`http://localhost:8000/api/update/user/${id}`, data)
+    await axios.put(`https://crud-nn05.onrender.com/api/update/user/${id}`, data)
       .then((response) => {
         // console.log("User Created Successfully.");
         toast.success("User updated Successfully" , {position: "top-right"});

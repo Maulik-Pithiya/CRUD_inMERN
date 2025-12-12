@@ -20,7 +20,7 @@ const UserForm = () => {
   const submitForm = async (data) => {
    
     // console.log(data)  
-    await axios.post("http://localhost:8000/api/user", data)
+    await axios.post("https://crud-nn05.onrender.com/api/user", data)
       .then((response) => {
         // console.log("User Created Successfully.");
         toast.success("User Created Successfully" , {position: "top-right"});

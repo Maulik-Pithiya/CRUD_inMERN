@@ -11,7 +11,7 @@ const UserTable = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const responce = await axios.get("http://localhost:8000/api/users");
+                const responce = await axios.get("https://crud-nn05.onrender.com/api/users");
                 setUsers(responce.data);
             } catch (error) {
                 console.log("Error While Fetching data. ", error)
@@ -21,7 +21,7 @@ const UserTable = () => {
     }, []);
 
     const deleteUser = async (userId)=>{
-        await axios.delete(`http://localhost:8000/api/delete/user/${userId}`)
+        await axios.delete(`https://crud-nn05.onrender.com/api/delete/user/${userId}`)
         .then((responce)=> {
             setUsers((prevUser)=>prevUser.filter((user)=>user._id !== userId));  
             toast.success(responce.data.message, {position: "top-right"})
